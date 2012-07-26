@@ -99,19 +99,11 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-export CLOJURE_EXT=~/.clojure
-export PATH=$PATH:~/opt/clojure-contrib/launchers/bash:~/opt/leiningen:~/eclipse/:~/nonrootmnemosyne/mnemosyne-proj/mnemosyne
-alias clj=clj-env-dir
-alias 'ml'='sml';
-alias 'noise'='cat /dev/urandom | hexdump -C | grep "ca fe"';
-alias 'noise2'='cat /dev/urandom | hexdump -C | grep "20.*ca.*fe.*\|.*?^[\.]+"';
-alias 'matrix'='cmatrix -Ba';
 alias 'ack'='ack-grep';
 alias 'vim'='gvim -v';
-alias ':e'='gvim -v';
-alias 'gsha'='git tag --contains'
+alias 'mkbak'='for foo in $(echo *); do mv $foo{,.bak}; done'
+alias 'rmbak'='for foo in $(echo *); do mv ${foo%%????}{.bak,}; done'
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export JRUBY_OPTS=--1.9
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-export DO_NOT_SYNC_WITH_VELOCITY=true

@@ -1,6 +1,6 @@
 ## Openbox autostart.sh
 ## ====================
-## When you login to your CrunchBang Openbox session, this autostart script 
+## When you login to your CrunchBang Openbox session, this autostart script
 ## will be executed to set-up your environment and launch any applications
 ## you want to run at startup.
 ##
@@ -32,7 +32,7 @@ tint2 &
 ## Note: cairo-compmgr prefers a sleep delay, else it tends to produce
 ## odd shadows/quirks around tint2 & Conky.
 #(sleep 10s && cb-compmgr --cairo-compmgr) &
-#cb-compmgr --xcompmgr & 
+#cb-compmgr --xcompmgr &
 
 ## Launch network manager applet
 (sleep 4s && nm-applet) &
@@ -62,6 +62,8 @@ xscreensaver -no-splash &
 ## an Openbox session by applying some gconf settings. Safe to delete.
 cb-bad-nautilus &
 
-setlayout 0 3 2 0 % &
+setlayout 0 4 2 0 % &
 
 xmodmap ~/.capslockswitcher &
+
+ssh-agent &
